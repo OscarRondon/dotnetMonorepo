@@ -1,6 +1,8 @@
 ﻿// See https://aka.ms/new-console-template for more information
-using csharp101;
+using BankOperationsLibrary;
 
+
+Console.WriteLine();
 var aFriend = "<My friend Name>";
 Console.WriteLine($"Hello, my dear {aFriend}!");
 Console.WriteLine($"Hello, my dear {aFriend.ToUpper()}!");
