@@ -7,4 +7,8 @@
     <RootNamespace>Series_101_4_0_aspnet</RootNamespace>
   </PropertyGroup>
 
+  <ItemGroup>
+    <Folder Include="wwwroot\mockData\" />
+  </ItemGroup>
+
 </Project>
