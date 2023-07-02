@@ -1,17 +1,16 @@
 ﻿@page
 @model IndexModel
 @{
-	ViewData["Title"] = "Home page";
+    ViewData["Title"] = "Home page";
 }
-@using Models
 
 <div class="text-center">
 	<h1 class="display-4">Welcome to my first web app on ASP.Net Core</h1>
 	<p>Learn about <a href="https://docs.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
 </div>
 
-<div class="card-columns row row-cols-1 row-cols-md-2 row-cols-lg-3 g-3">
-    @foreach (var product in Model.Products)
+<div class="card-columns row row-cols-5 row-cols-sm-5 row-cols-md-5 g-3">
+    @foreach (Product product in Model.Products)
     {
         <div class="card">
             <div class="card-img" style="background-image: url('@product.img');">

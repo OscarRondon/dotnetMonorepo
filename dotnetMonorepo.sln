@@ -13,7 +13,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Series_101_1_1-BankOperatio
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Series_101_3_0-BankingTests", "BankingTests\Series_101_3_0-BankingTests.csproj", "{6D9D44EC-2BD0-40C6-A7F7-C38AF55C58C1}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Series_101_4_0-aspnet", "Series_101_4_0-aspnet\Series_101_4_0-aspnet.csproj", "{EBF2FBDB-65EC-4403-B9B8-4B6642863D15}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Series_101_4_0-aspnet", "Series_101_4_0-aspnet\Series_101_4_0-aspnet.csproj", "{EBF2FBDB-65EC-4403-B9B8-4B6642863D15}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
