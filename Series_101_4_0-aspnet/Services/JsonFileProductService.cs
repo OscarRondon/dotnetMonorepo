@@ -32,5 +32,26 @@ namespace Series_101_4_0_aspnet.Services
                     });
             }
         }
+
+        public void AddRating(string prodId, int rating)
+        {
+            IEnumerable<Product> products = GetProducts();
+
+            Product prod = products.First(x => x.id == prodId);
+            List<int> ratings = null;
+
+            ratings = prod.Ratings != null ? prod.Ratings.ToList() : new List<int>();
+
+            ratings.Add(rating);
+            prod.Ratings = ratings.ToArray();
+
+            using (var outputStream = File.OpenWrite(JsonFileName))
+            {
+                prod.Ratings = ratings.ToArray();
+                JsonSerializer.Serialize<IEnumerable<Product>>(
+                    new Utf8JsonWriter(outputStream, new JsonWriterOptions { SkipValidation = true, Indented = true }), products
+                );
+            }
+        }
     }
 }

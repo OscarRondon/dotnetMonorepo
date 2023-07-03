@@ -1,4 +1,6 @@
+using Series_101_4_0_aspnet.Models;
 using Series_101_4_0_aspnet.Services;
+using System.Text.Json;
 
 internal class Program
 {
@@ -29,6 +31,15 @@ internal class Program
 
         app.MapRazorPages();
 
+        // We can add the endpoints at main but its better to have it separated in a controller e.g ProductsController.cs
+        //app.MapGet("/products", (context) => {
+        //    IEnumerable<Product> products = app.Services.GetService<JsonFileProductService>().GetProducts();
+        //    string jsonResp = JsonSerializer.Serialize(products);
+        //    return context.Response.WriteAsJsonAsync(jsonResp);
+        //});
+
+        app.MapControllers();
+        
         app.Run();
     }
 }
