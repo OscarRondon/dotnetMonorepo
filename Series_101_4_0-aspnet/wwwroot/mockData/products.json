@@ -6,9 +6,7 @@
     "url": "https://www.hackster.io/agent-hawking-1/the-quantified-cactus-an-easy-plant-soil-moisture-sensor-e65393",
     "title": "The Quantified Cactus: An Easy Plant Soil Moisture Sensor",
     "description": "This project is a good learning project to get comfortable with soldering and programming an Arduino.",
-    "Ratings": [
-      5
-    ]
+    "Ratings": null
   },
   {
     "id": "jenlooper-light",
@@ -53,7 +51,9 @@
     "url": "https://twitter.com/sailorhg/status/1090113666911891456",
     "title": "Light-up Corsage",
     "description": "Light-up corsage I made with my summer intern.",
-    "Ratings": null
+    "Ratings": [
+      2
+    ]
   },
   {
     "id": "sailorhg-kit",
@@ -98,7 +98,9 @@
     "url": "https://www.vogueandcode.com/shop/hipster-dev-bro",
     "title": "Hipster Dev",
     "description": "Hipster Dev is busy coding away while styled in a camo jacket and orange beanie.",
-    "Ratings": null
+    "Ratings": [
+      5
+    ]
   },
   {
     "id": "vogueandcode-pretty-girls-code-tee",

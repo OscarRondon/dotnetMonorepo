@@ -1,23 +1,40 @@
 ﻿@page
+@using Series_101_4_0_aspnet.Components;
+
 @model IndexModel
 @{
     ViewData["Title"] = "Home page";
 }
 
 <div class="text-center">
-	<h1 class="display-4">Welcome to my first web app on ASP.Net Core</h1>
-	<p>Learn about <a href="https://docs.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
+    <h1 class="display-4">Welcome to my first web app on ASP.Net Core</h1>
+    <p>Learn about <a href="https://docs.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
 </div>
 
-<div class="card-columns row row-cols-5 row-cols-sm-5 row-cols-md-5 g-3">
-    @foreach (Product product in Model.Products)
+@* <div class="card-columns row row-cols-5 row-cols-sm-5 row-cols-md-5 g-3">
+        @foreach (Product product in Model.Products)
+        {
+            <div class="card">
+                <div class="card-img" style="background-image: url('@product.img');">
+                </div>
+                <div class="card-body">
+                    <h5 class="card-title">@product.title</h5>
+                </div>
+            </div>
+        }
+    </div> *@
+
+@(await Html.RenderComponentAsync<ProductList>(RenderMode.ServerPrerendered))
+
+@section Scripts {
+    @if (ViewBag.Saved != null)
     {
-        <div class="card">
-            <div class="card-img" style="background-image: url('@product.img');">
-            </div>
-            <div class="card-body">
-                <h5 class="card-title">@product.title</h5>
-            </div>
-        </div>
+        <script>
+            $(function () {
+                $("#exampleModal").modal("show");
+            });
+        </script>
     }
-</div>
+}
+
+<script src="_framework/blazor.server.js"></script>

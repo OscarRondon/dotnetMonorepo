@@ -10,6 +10,7 @@ internal class Program
 
         // Add services to the container.
         builder.Services.AddRazorPages();
+        builder.Services.AddServerSideBlazor();
         builder.Services.AddTransient<JsonFileProductService>();
 
         var app = builder.Build();
@@ -39,6 +40,7 @@ internal class Program
         //});
 
         app.MapControllers();
+        app.MapBlazorHub();
         
         app.Run();
     }
