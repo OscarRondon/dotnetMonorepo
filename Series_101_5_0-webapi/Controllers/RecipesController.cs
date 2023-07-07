@@ -67,7 +67,7 @@ namespace Series_101_5_0_webapi.Controllers
         ///     {
         ///        "path": "/title",
         ///        "op": "replace",
-        ///        "value": "The new title!!!"
+        ///        "value": "The new title!"
         ///     }
         ///     
         /// </remarks>
