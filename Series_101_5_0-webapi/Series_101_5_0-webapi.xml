@@ -1,0 +1,37 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Series_101_5_0-webapi</name>
+    </assembly>
+    <members>
+        <member name="M:Series_101_5_0_webapi.Controllers.RecipesController.Get">
+            <summary>
+            Get all recipes
+            </summary>
+            <returns>List of recipes</returns>
+            <remarks>
+            Example:
+            
+            GET https://localhost:port/Recipes
+            
+            </remarks>
+        </member>
+        <member name="M:Series_101_5_0_webapi.Controllers.RecipesController.Update(System.Int32,Microsoft.AspNetCore.JsonPatch.JsonPatchDocument{Series_101_5_0_webapi.Models.Recipe})">
+             <summary>
+             Update a recipe
+             </summary>
+             <returns>List of recipes</returns>
+             <remarks>
+             Example:
+            
+                 PATCH https://localhost:port/Recipes(125)
+                 {
+                    "path": "/title",
+                    "op": "replace",
+                    "value": "The new title!!!"
+                 }
+                 
+             </remarks>
+        </member>
+    </members>
+</doc>
