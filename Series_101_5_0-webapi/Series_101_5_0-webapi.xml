@@ -28,7 +28,7 @@
                  {
                     "path": "/title",
                     "op": "replace",
-                    "value": "The new title!!!"
+                    "value": "The new title!"
                  }
                  
              </remarks>
