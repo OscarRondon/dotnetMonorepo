@@ -1,0 +1,43 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Threading.Tasks;
+using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.Mvc.RazorPages;
+using Microsoft.EntityFrameworkCore;
+using Series_101_7_2_EntityFramework.Data;
+using Series_101_7_2_EntityFramework.Models;
+
+namespace Series_101_7_2_EntityFramework.Pages.Products
+{
+    public class DetailsModel : PageModel
+    {
+        private readonly Series_101_7_2_EntityFramework.Data.PizzadbContext _context;
+
+        public DetailsModel(Series_101_7_2_EntityFramework.Data.PizzadbContext context)
+        {
+            _context = context;
+        }
+
+      public Product Product { get; set; } = default!; 
+
+        public async Task<IActionResult> OnGetAsync(int? id)
+        {
+            if (id == null || _context.Products == null)
+            {
+                return NotFound();
+            }
+
+            var product = await _context.Products.FirstOrDefaultAsync(m => m.Id == id);
+            if (product == null)
+            {
+                return NotFound();
+            }
+            else 
+            {
+                Product = product;
+            }
+            return Page();
+        }
+    }
+}
