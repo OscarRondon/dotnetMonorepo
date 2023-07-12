@@ -20,6 +20,8 @@ public partial class Customer
 
     public string? Email { get; set; }
 
+    public int? DefaultAddress { get; set; }
+
     [InverseProperty("Customer")]
     public virtual ICollection<CustomerAddress> CustomerAddresses { get; set; } = new List<CustomerAddress>();
 
