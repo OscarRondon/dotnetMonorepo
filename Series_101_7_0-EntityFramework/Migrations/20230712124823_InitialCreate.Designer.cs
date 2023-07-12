@@ -12,7 +12,7 @@ using Series_101_7_0_EntityFramework.Data;
 namespace Series_101_7_0_EntityFramework.Migrations
 {
     [DbContext(typeof(PizzaDBContext))]
-    [Migration("20230711163827_InitialCreate")]
+    [Migration("20230712124823_InitialCreate")]
     partial class InitialCreate
     {
         /// <inheritdoc />
@@ -36,7 +36,7 @@ namespace Series_101_7_0_EntityFramework.Migrations
                     b.Property<string>("Email")
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<string>("FisrtName")
+                    b.Property<string>("FirstName")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
