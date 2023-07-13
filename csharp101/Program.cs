@@ -1,6 +1,5 @@
 ﻿// See https://aka.ms/new-console-template for more information
 using BankOperationsLibrary;
-using Microsoft.Extensions.Configuration;
 using System.Runtime.InteropServices.JavaScript;
 
 Console.WriteLine();
@@ -9,8 +8,8 @@ Console.WriteLine($"Hello, my dear {aFriend}!");
 Console.WriteLine($"Hello, my dear {aFriend.ToUpper()}!");
 Console.WriteLine($"Hello, my dear {aFriend.ToLower()}!");
 
-var names = new List<string> { "<name 1>", "<name 2>" , "<name 3>" };
-foreach(string name in names )
+var names = new List<string> { "<name 1>", "<name 2>", "<name 3>" };
+foreach (string name in names)
 {
     Console.WriteLine(name);
 }
@@ -35,18 +34,9 @@ catch (ArgumentOutOfRangeException e)
     Console.WriteLine(e.ToString());
     //return;
 }
-// source https://www.programmingwithwolfgang.com/use-net-secrets-in-console-application/
 
-var environment = Environment.GetEnvironmentVariable("NETCORE_ENVIRONMENT");
-var builder = new ConfigurationBuilder()
-            .AddJsonFile("appsettings.json")
-            .AddJsonFile($"appsettings.{environment}.json", optional: true)
-            .AddUserSecrets<Program>()
-            .AddEnvironmentVariables();
-var configurationRoot = builder.Build();
-
-var secrets = configurationRoot.GetSection("MySecretValues").Get<SecretValues>();
+SecretValues secrets = new SecretValues();
 
 Console.WriteLine("----------------------------------------------------------");
 Console.WriteLine();
-Console.WriteLine(secrets);
+Console.WriteLine($"User Name: {secrets.Username} ** Password: {secrets.Password}");

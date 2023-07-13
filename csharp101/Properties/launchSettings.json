@@ -1,0 +1,10 @@
+{
+  "profiles": {
+    "Series_101_1_0-csharp": {
+      "commandName": "Project",
+      "environmentVariables": {
+        "NETCORE_ENVIRONMENT": "Development"
+      }
+    }
+  }
+}
