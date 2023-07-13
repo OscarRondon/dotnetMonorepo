@@ -1,6 +1,7 @@
 ﻿// See https://aka.ms/new-console-template for more information
 using BankOperationsLibrary;
-
+using Microsoft.Extensions.Configuration;
+using System.Runtime.InteropServices.JavaScript;
 
 Console.WriteLine();
 var aFriend = "<My friend Name>";
@@ -32,5 +33,20 @@ catch (ArgumentOutOfRangeException e)
 {
     Console.WriteLine("Exception caught creating account with negative balance");
     Console.WriteLine(e.ToString());
-    return;
+    //return;
 }
+// source https://www.programmingwithwolfgang.com/use-net-secrets-in-console-application/
+
+var environment = Environment.GetEnvironmentVariable("NETCORE_ENVIRONMENT");
+var builder = new ConfigurationBuilder()
+            .AddJsonFile("appsettings.json")
+            .AddJsonFile($"appsettings.{environment}.json", optional: true)
+            .AddUserSecrets<Program>()
+            .AddEnvironmentVariables();
+var configurationRoot = builder.Build();
+
+var secrets = configurationRoot.GetSection("MySecretValues").Get<SecretValues>();
+
+Console.WriteLine("----------------------------------------------------------");
+Console.WriteLine();
+Console.WriteLine(secrets);
